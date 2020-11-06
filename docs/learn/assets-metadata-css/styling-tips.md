@@ -1,4 +1,4 @@
-# 资源、元数据和CSS
+# 资源、元数据和 CSS
 
 ## 样式技巧
 
@@ -29,26 +29,26 @@
 并像这样使用 `classnames`:
 
 ```jsx
-import styles from './alert.css'
-import cn from 'classnames'
+import styles from './alert.css';
+import cn from 'classnames';
 
 export default function Alert({ children, type }) {
   return (
     <div
       className={cn({
         [styles.success]: type === 'success',
-        [styles.error]: type === 'error'
+        [styles.error]: type === 'error',
       })}
     >
       {children}
     </div>
-  )
+  );
 }
 ```
 
 ### 使用 Less
 
-在开箱即用的情况下，alita 允许你导入 [Less] 文件。你可以直接使用 Less 文件，并像掩饰中的一样使用 CSS Modules。
+在开箱即用的情况下，alita 允许你导入 [Less] 文件。你可以直接使用 Less 文件，并像演示中的一样使用 CSS Modules。
 
 ### 这节课就到这里!
 

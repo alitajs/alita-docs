@@ -4,7 +4,7 @@
 
 前面我们花了大量的篇幅介绍项目中的数据流方案，其实他们是作为数据消费部分存在的。但是我们并没有真正的发起数据请求，在这里我们将详细的介绍在 alita 中如何规范的发起数据请求，即如何将数据传入我们之前介绍的数据流方案中。
 
-在很多其他项目中，我们都会单独维护一个 http 请求的工具类，它一般会在你的 `utils` 文件夹中，但是通过多个项目的代码比对，我们发现这个工具类有至少80%的代码是重复的，且不同人员的维护上也比较随意，代码维护上是比较乱的。因此我们将 request 请求内置到框架中。
+在很多其他项目中，我们都会单独维护一个 http 请求的工具类，它一般会在你的 `utils` 文件夹中，但是通过多个项目的代码比对，我们发现这个工具类有至少 80%的代码是重复的，且不同人员的维护上也比较随意，代码维护上是比较乱的。因此我们将 request 请求内置到框架中。
 
 ```js
 import { request } from 'alita';
@@ -18,7 +18,7 @@ const data = await request('/api/hello', {
 
 > 如果你的服务端返回数据格式不同，会在后面的配置中提到如何处理这种情况。
 
-```ts
+```
 interface ErrorInfoStructure {
   success: boolean; // if request is success
   data?: any; // response data
@@ -26,7 +26,7 @@ interface ErrorInfoStructure {
 }
 ```
 
-一般我们对服务端发起请求，最常见的会涉及到，统一的请求url、统一的head、默认的请求方式（默认 get或者默认post）等。
+一般我们对服务端发起请求，最常见的会涉及到，统一的请求 url、统一的 head、默认的请求方式（默认 get 或者默认 post）等。
 
 这些内容，我们都在运行时配置中提供了修改方式。
 
@@ -37,7 +37,7 @@ export const request = {
   prefix: '',
   method: 'get',
   errorConfig: {
-    adaptor: (resData) => {
+    adaptor: resData => {
       return {
         ...resData,
         success: resData.ok,
@@ -95,11 +95,7 @@ const middleware = async (ctx, next) => {
   // next 执行之后，这部分我们一般是对请求结果做操作，比如统一的错误码处理，或者token失效这些，都可以在这里处理
   // 以下代码只是模拟，正式的写法要根据服务端的约定
   if (ctx.res.errors) {
-    const {
-      errorCode,
-      fieldPath,
-      message,
-      value } = ctx.res.errors[0];
+    const { errorCode, fieldPath, message, value } = ctx.res.errors[0];
     if (errorCode === '0000') {
       gotoLogin(message);
     } else {
