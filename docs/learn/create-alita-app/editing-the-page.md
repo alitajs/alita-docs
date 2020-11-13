@@ -1,3 +1,8 @@
+---
+lastPost: true
+nextText: '页面间导航'
+nextUrl: '/learn/navigate-between-pages'
+---
 # 创建 alita 应用程序
 
 ## 编辑页面

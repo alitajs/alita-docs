@@ -1,8 +1,8 @@
 ---
 previousText: '简介'
-previousUrl: '/learn/create-alita-app/index'
-nextText: 'Starting an App'
-nextUrl: '/building/starting'
+previousUrl: '/learn/create-alita-app'
+nextText: '编辑页面'
+nextUrl: '/learn/create-alita-app/editing-the-page'
 ---
 
 # 创建 Next.js 应用程序

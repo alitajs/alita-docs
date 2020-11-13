@@ -5,7 +5,7 @@
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
-    "docs:deploy": "gh-pages -d docs-dist",
+    "docs:deploy": "gh-pages -d alita-docs",
     "build": "father-build",
     "deploy": "npm run docs:build && npm run docs:deploy",
     "release": "npm run build && npm publish",
@@ -28,14 +28,13 @@
     ]
   },
   "dependencies": {
-    "dumi-theme-alita": "0.0.1-beta.1",
     "react": "^16.12.0"
   },
   "devDependencies": {
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
-    "dumi": "1.1.0-beta.2",
-    "father-build": "^1.17.2",
+    "dumi": "1.1.0-rc.1",
+    "father-build": "^1.18.6",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",

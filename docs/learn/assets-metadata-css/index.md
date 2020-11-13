@@ -1,3 +1,9 @@
+---
+firstPost: true
+nextText: '资源'
+nextUrl: '/learn/assets-metadata-css/assets'
+---
+
 # 资源、元数据和CSS
 
 ## 简介

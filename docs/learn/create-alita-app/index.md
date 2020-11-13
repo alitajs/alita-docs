@@ -3,6 +3,7 @@ nav:
   title: 学习
   order: 3
 toc: menu
+firstPost: true
 nextText: '环境配置及基础详解'
 nextUrl: '/learn/create-alita-app/setup'
 ---
