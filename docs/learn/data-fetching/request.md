@@ -18,7 +18,7 @@ const data = await request('/api/hello', {
 
 > 如果你的服务端返回数据格式不同，会在后面的配置中提到如何处理这种情况。
 
-```ts
+```
 interface ErrorInfoStructure {
   success: boolean; // if request is success
   data?: any; // response data

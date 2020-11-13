@@ -7,7 +7,7 @@ export default defineConfig({
   outputPath: 'alita-docs',
   mode: 'site',
   resolve: {
-    previewLangs: ['ts','tsx'],
+    previewLangs: ['tsx'],
   },
   // more config: https://d.umijs.org/config
   menus: {
