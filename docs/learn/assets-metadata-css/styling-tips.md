@@ -1,4 +1,10 @@
-# 资源、元数据和CSS
+---
+lastPost: true
+nextText: '数据获取'
+nextUrl: '/learn/data-fetching'
+---
+
+# 资源、元数据和 CSS
 
 ## 样式技巧
 
@@ -29,20 +35,20 @@
 并像这样使用 `classnames`:
 
 ```jsx
-import styles from './alert.css'
-import cn from 'classnames'
+import styles from './alert.css';
+import cn from 'classnames';
 
 export default function Alert({ children, type }) {
   return (
     <div
       className={cn({
         [styles.success]: type === 'success',
-        [styles.error]: type === 'error'
+        [styles.error]: type === 'error',
       })}
     >
       {children}
     </div>
-  )
+  );
 }
 ```
 

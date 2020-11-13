@@ -1,3 +1,9 @@
+---
+firstPost: true
+nextText: 'alita 中的页面'
+nextUrl: '/learn/navigate-between-pages/pages-in-alita'
+---
+
 # 页面间导航
 
 ## 简介

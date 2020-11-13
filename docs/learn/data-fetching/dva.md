@@ -1,3 +1,10 @@
+---
+previousText: '简介'
+previousUrl: '/learn/data-fetching'
+nextText: 'dva入门'
+nextUrl: '/learn/data-fetching/dva-learn'
+---
+
 # 数据获取
 
 ## dva

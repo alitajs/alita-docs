@@ -1,4 +1,11 @@
-# 资源、元数据和CSS
+---
+previousText: '布局组件'
+previousUrl: '/learn/assets-metadata-css/layout-component'
+nextText: '样式技巧'
+nextUrl: '/learn/assets-metadata-css/styling-tips'
+---
+
+# 资源、元数据和 CSS
 
 ## 全局样式
 
@@ -37,20 +44,21 @@ import { Link, Helmet } from 'alita';
 import { Button } from 'antd-mobile';
 
 export default () => (
-    <div>
-        <Helmet>
-            <title>alita 入门教程</title>
-        </Helmet>
-        <Button type="primary">Click Me!</Button>
-        <Link to="/list">Go to list page</Link>
-    </div>);
+  <div>
+    <Helmet>
+      <title>alita 入门教程</title>
+    </Helmet>
+    <Button type="primary">Click Me!</Button>
+    <Link to="/list">Go to list page</Link>
+  </div>
+);
 ```
 
 在 `src/global.css` 中，覆盖样式：
 
 ```css
 .am-button-primary {
-    margin: 50px;
+  margin: 50px;
 }
 ```
 
@@ -60,7 +68,7 @@ export default () => (
 
 > **如果它无效**: 请确保在添加 `src/global.css` 时重新启动开发服务器。
 
->注意：此处的覆盖为全局覆盖，所写样式会影响项目所有的页面，因此建议在项目早期统一编写和修改它。在后期维护中尽量不做编辑操作。所有编辑都要及时的告知其他开发人员。
+> 注意：此处的覆盖为全局覆盖，所写样式会影响项目所有的页面，因此建议在项目早期统一编写和修改它。在后期维护中尽量不做编辑操作。所有编辑都要及时的告知其他开发人员。
 
 总结一下到目前为止我们所学到的:
 

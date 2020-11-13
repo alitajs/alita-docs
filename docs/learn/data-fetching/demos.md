@@ -1,3 +1,9 @@
+---
+firstPost: true
+nextText: 'dva'
+nextUrl: '/learn/data-fetching/dva'
+---
+
 # 数据获取
 
 ## 实战演练

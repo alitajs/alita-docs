@@ -1,3 +1,8 @@
+---
+firstPost: true
+nextText: 'dva'
+nextUrl: '/learn/data-fetching/dva'
+---
 
 # 数据获取
 
@@ -16,7 +21,7 @@
 学完这节课您将会掌握：
 
 1. dva 的基本入门
-2. 项目中如何使用dva
+2. 项目中如何使用 dva
 3. 如何在 react hooks 中请求数据
 4. 如何统一管理请求地址
 5. 如何有效的管理接口文件

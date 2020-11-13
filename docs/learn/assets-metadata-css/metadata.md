@@ -1,4 +1,11 @@
-# 资源、元数据和CSS
+---
+previousText: '资源'
+previousUrl: '/learn/assets-metadata-css/assets'
+nextText: 'CSS 样式'
+nextUrl: '/learn/assets-metadata-css/css-styling'
+---
+
+# 资源、元数据和 CSS
 
 ## 元数据
 
@@ -40,12 +47,13 @@ import { Link, Helmet } from 'alita';
 import { Link, Helmet } from 'alita';
 
 export default () => (
-    <div>
-        <Helmet>
-            <title>alita 入门教程</title>
-        </Helmet>
-        <Link to="/list">Go to list page</Link>
-    </div>);
+  <div>
+    <Helmet>
+      <title>alita 入门教程</title>
+    </Helmet>
+    <Link to="/list">Go to list page</Link>
+  </div>
+);
 ```
 
 尝试访问 [http://localhost:8000](http://localhost:8000)。
@@ -59,15 +67,15 @@ export default () => (
 如果你想完全的自定义 html，你可以创建一个 `src/pages/document.ejs` 文件来实现。alita 约定如果这个文件存在，会作为默认模板，比如：
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charSet="utf-8" />
-  <title>Your App</title>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Your App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
 ```
 
@@ -76,7 +84,11 @@ export default () => (
 模板里可通过 context 来获取到 alita 提供的变量，比如：
 
 ```js
-<link rel="icon" type="image/x-icon" href="<%= context.config.publicPath % />favicon.png" />
+<link
+  rel="icon"
+  type="image/x-icon"
+  href="<%= context.config.publicPath % />favicon.png"
+/>
 ```
 
 对于元数据的知识，你应该了解的差不多了。下一节课中，我们将讲解如何在 alita 中使用 CSS。

@@ -1,4 +1,11 @@
-# 资源、元数据和CSS
+---
+previousText: 'CSS 样式'
+previousUrl: '/learn/assets-metadata-css/css-styling'
+nextText: '全局样式'
+nextUrl: '/learn/assets-metadata-css/global-styles'
+---
+
+# 资源、元数据和 CSS
 
 ## 布局组件
 
@@ -9,10 +16,10 @@
 
 ```jsx
 function Layout({ children }) {
-  return <div>{children}</div>
+  return <div>{children}</div>;
 }
 
-export default Layout
+export default Layout;
 ```
 
 ### 添加 CSS
@@ -37,10 +44,10 @@ export default Layout
 - 在这种情况下，类名是 `container`，所以我们将使用 `styles.container`
 
 ```jsx
-import styles from './index.css'
+import styles from './index.css';
 
 export default function Layout({ children }) {
-  return <div className={styles.container}>{children}</div>
+  return <div className={styles.container}>{children}</div>;
 }
 ```
 

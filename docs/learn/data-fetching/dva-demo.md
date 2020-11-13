@@ -1,3 +1,10 @@
+---
+previousText: 'dva入门'
+previousUrl: '/learn/data-fetching/dva-learn'
+nextText: '纯 hooks 数据流'
+nextUrl: '/learn/data-fetching/hooks'
+---
+
 # 数据获取
 
 ## dva 课堂实战
@@ -34,13 +41,13 @@ export default GlobalModel;
 ```js
 import { connect } from 'alita';
 
-connect(映射函数)(组件)
+connect(映射函数)(组件);
 ```
 
 ```js
 // 映射函数
 
-const mapStateToProps = (state)=>state;
+const mapStateToProps = state => state;
 ```
 
 connect 函数会自动给映射函数传入整个项目的 state，它包含了整个项目的所有的 models。
@@ -51,7 +58,9 @@ connect 函数会自动给映射函数传入整个项目的 state，它包含了
 ```js
 // 映射函数
 
-const mapStateToProps = (state)=>{global:state.global};
+const mapStateToProps = state => {
+  global: state.global;
+};
 ```
 
 就可以直接从组件的 props 里面取出 global 的属性。这就是 `connect` 函数做的事情。
@@ -65,16 +74,17 @@ import { Link, Helmet, connect } from 'alita';
 import { Button } from 'antd-mobile';
 // 这里的 global 是 connect 向组件中注入的属性
 const IndexPage = ({ global }) => {
-    const { name } = global;
-    return (
-        <div>
-            <h1 style={{ color: "white" }}>{name}</h1>
-            <Helmet>
-                <title>alita 入门教程</title>
-            </Helmet>
-            <Button type="primary">Click Me!</Button>
-            <Link to="/list">Go to list page</Link>
-        </div>)
+  const { name } = global;
+  return (
+    <div>
+      <h1 style={{ color: 'white' }}>{name}</h1>
+      <Helmet>
+        <title>alita 入门教程</title>
+      </Helmet>
+      <Button type="primary">Click Me!</Button>
+      <Link to="/list">Go to list page</Link>
+    </div>
+  );
 };
 // 第一个 global 是指从 state 中取出 global model
 // 第二个 global 是指返回一个 global 属性，因为是同名所以此处缩写，其实是 { global:global }
@@ -89,7 +99,7 @@ export default connect(({ global }) => ({ global }))(IndexPage);
 const { name } = global;
 ```
 
-这里的数据结构其实是你在models中定义的数据结构，即：
+这里的数据结构其实是你在 models 中定义的数据结构，即：
 
 ```js
 state: {
@@ -97,11 +107,11 @@ state: {
 },
 ```
 
-比如这里我们定义了这个 model 的 state 是一个对象，所以绑定到页面中时，global就是一个对象，你可以根据自己的真实需要定义这里的数据类型。比如：
+比如这里我们定义了这个 model 的 state 是一个对象，所以绑定到页面中时，global 就是一个对象，你可以根据自己的真实需要定义这里的数据类型。比如：
 
 ```js
 // 这里定义了是一个数字类型
-state:0
+state: 0;
 
 // 因此在 page 中的 global就是一个数字类型，当你再次取 global.name 的时候就会导致程序出错
 ```
@@ -119,17 +129,22 @@ state:0
 其实通过 `connect` 函数绑定后的函数，不仅会被传入 model 的属性，还会被传入 `dispatch` 属性，即你可以通过组件的 props 取出 `dispatch`。
 
 ```js
-const IndexPage = ({ global,dispatch }) => {
-
-  return (<button onClick={()=>{
-    dispatch({
-      type: 'global/changeName',
-      payload: {
-        name:'alita 入门教程'
-      }
-    })
-  }}>click me!</button>)
-}
+const IndexPage = ({ global, dispatch }) => {
+  return (
+    <button
+      onClick={() => {
+        dispatch({
+          type: 'global/changeName',
+          payload: {
+            name: 'alita 入门教程',
+          },
+        });
+      }}
+    >
+      click me!
+    </button>
+  );
+};
 ```
 
 这里调用 dispatch 通常需要传入两个参数，`type` 和 `payload`。
@@ -155,7 +170,7 @@ const IndexPage = ({ global,dispatch }) => {
 
 ### 副作用与更新数据
 
-这时候数据就有页面交接到了model，我们在 effects 中处理这些副作用，我这里所谓的副作用包括页面的变化和数据的变化。
+这时候数据就有页面交接到了 model，我们在 effects 中处理这些副作用，我这里所谓的副作用包括页面的变化和数据的变化。
 比如我们可以在这里请求服务端的接口，也可以直接在此处修改数据。最终我们将处理后的数据，返回到 reducers 事件中。
 
 在 alita 中，我们建议只写一个 reducers 事件 save， 即
@@ -176,7 +191,6 @@ reducers: {
 用法如下：
 
 ```js
-
 const GlobalModel = {
   namespace: 'global',
 
@@ -203,7 +217,6 @@ const GlobalModel = {
 };
 
 export default GlobalModel;
-
 ```
 
 effects 中的 put 函数，作用和 `dispatch` 类似，不过它是表示向 reducers 抛出一个事件。
@@ -217,7 +230,7 @@ effects 中的 put 函数，作用和 `dispatch` 类似，不过它是表示向 
 
 effects 函数的第二参数中除了 `put` ，常用的还有 `call` 和 `select` 即： `{ call, put, select }`
 
-call 就是调用其他函数，这个比较好理解。select 的作用是查找 state，比如如果你想获得最新的 global 的state。
+call 就是调用其他函数，这个比较好理解。select 的作用是查找 state，比如如果你想获得最新的 global 的 state。
 可以这么写：`const globalState = yield select(_=>_.global);`
 
 如果你理解了上面的概念，那现在回到我们的问题上：写一个列表，包含删除按钮，点删除按钮后延迟 1 秒执行删除。
@@ -240,7 +253,7 @@ const GlobalModel = {
 
   state: {
     name: 'learn alita',
-    list: ['step1','step2','step3','step4']
+    list: ['step1', 'step2', 'step3', 'step4'],
   },
   effects: {
     *changeName({ payload }, { call, put }) {
@@ -249,17 +262,23 @@ const GlobalModel = {
         payload: { name: payload.name },
       });
     },
-    *deleteItem({ payload }, { call, put,select }) {
-        const { list } = yield select(_=>_.global);
-        yield call(()=>new Promise(resolve => {
+    *deleteItem({ payload }, { call, put, select }) {
+      const { list } = yield select(_ => _.global);
+      yield call(
+        () =>
+          new Promise(resolve => {
             setTimeout(resolve, 1000);
-          }))
-        list.splice(list.findIndex(e => e === payload), 1)
-        yield put({
-          type: 'save',
-          payload: { list },
-        });
-      },
+          }),
+      );
+      list.splice(
+        list.findIndex(e => e === payload),
+        1,
+      );
+      yield put({
+        type: 'save',
+        payload: { list },
+      });
+    },
   },
   reducers: {
     save(state, action) {
@@ -280,29 +299,45 @@ import { Link, Helmet, connect } from 'alita';
 import { Button } from 'antd-mobile';
 
 const IndexPage = ({ global, dispatch }) => {
-    const { name, list = [] } = global;
-    return (
-        <div>
-            <h1 style={{ color: "white" }}>{name}</h1>
-            <Helmet>
-                <title>alita 入门教程</title>
-            </Helmet>
-            <Button type="primary" onClick={() => {
+  const { name, list = [] } = global;
+  return (
+    <div>
+      <h1 style={{ color: 'white' }}>{name}</h1>
+      <Helmet>
+        <title>alita 入门教程</title>
+      </Helmet>
+      <Button
+        type="primary"
+        onClick={() => {
+          dispatch({
+            type: 'global/changeName',
+            payload: {
+              name: 'alita 入门教程',
+            },
+          });
+        }}
+      >
+        Click Me!
+      </Button>
+      <Link to="/list">Go to list page</Link>
+      <ul>
+        {list.map(i => (
+          <li key={i}>
+            <Button
+              onClick={() => {
                 dispatch({
-                    type: 'global/changeName',
-                    payload: {
-                        name: 'alita 入门教程'
-                    }
-                })
-            }}>Click Me!</Button>
-            <Link to="/list">Go to list page</Link>
-            <ul>{list.map(i => (<li key={i}><Button onClick={() => {
-                dispatch({
-                    type: 'global/deleteItem',
-                    payload: i
-                })
-            }}>删除{i} </Button></li>))}</ul>
-        </div>)
+                  type: 'global/deleteItem',
+                  payload: i,
+                });
+              }}
+            >
+              删除{i}{' '}
+            </Button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 export default connect(({ global }) => ({ global }))(IndexPage);
 ```

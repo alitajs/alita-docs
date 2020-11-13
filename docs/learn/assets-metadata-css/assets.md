@@ -1,4 +1,11 @@
-# 资源、元数据和CSS
+---
+previousText: '简介'
+previousUrl: '/learn/assets-metadata-css'
+nextText: '元数据'
+nextUrl: '/learn/assets-metadata-css/metadata'
+---
+
+# 资源、元数据和 CSS
 
 ## 资源
 
@@ -13,14 +20,14 @@
 import LogoImg from '@/assets/logo.png';
 
 export default function List({ history }) {
-    return (
-        <div>
-            <img src={LogoImg} width={150} />
-            <h1>list</h1>
-            <button onClick={() => history.goBack()}>go back!</button>
-            <button onClick={() => history.push('/')} >go to index!</button>
-        </div>
-    )
+  return (
+    <div>
+      <img src={LogoImg} width={150} />
+      <h1>list</h1>
+      <button onClick={() => history.goBack()}>go back!</button>
+      <button onClick={() => history.push('/')}>go to index!</button>
+    </div>
+  );
 }
 ```
 
@@ -40,7 +47,7 @@ alita 默认将 `@` 映射到项目的 `src` 目录中，所以你可以在项�
 
 ```js
 {
-  inlineLimit:10000 // 10K
+  inlineLimit: 10000; // 10K
 }
 ```
 

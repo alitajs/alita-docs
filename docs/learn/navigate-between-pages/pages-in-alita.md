@@ -1,3 +1,10 @@
+---
+previousText: '简介'
+previousUrl: '/learn/navigate-between-pages'
+nextText: '声明式与约定式'
+nextUrl: '/learn/navigate-between-pages/link-component'
+---
+
 # 页面间导航
 
 ## alita 中的页面
@@ -23,7 +30,7 @@ alita 默认使用约定式路由来匹配文件。（约定式路由也叫文�
 
 ```jsx
 export default function List() {
-  return <h1>list</h1>
+  return <h1>list</h1>;
 }
 ```
 
