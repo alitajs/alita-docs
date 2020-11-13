@@ -48,7 +48,7 @@ export default function Alert({ children, type }) {
 
 ### 使用 Less
 
-在开箱即用的情况下，alita 允许你导入 [Less] 文件。你可以直接使用 Less 文件，并像掩饰中的一样使用 CSS Modules。
+在开箱即用的情况下，alita 允许你导入 [Less] 文件。你可以直接使用 Less 文件，并像演示中的一样使用 CSS Modules。
 
 ### 这节课就到这里!
 
