@@ -3,12 +3,10 @@
   "name": "alita-docs-dumi",
   "version": "1.0.0",
   "scripts": {
-    "start": "dumi dev",
-    "docs:build": "dumi build",
+    "start": "DEBUG=dumi:theme dumi dev",
+    "build": "dumi build",
     "docs:deploy": "gh-pages -d alita-docs",
-    "build": "father-build",
-    "deploy": "npm run docs:build && npm run docs:deploy",
-    "release": "npm run build && npm publish",
+    "deploy": "npm run build && npm run docs:deploy",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
@@ -28,12 +26,13 @@
     ]
   },
   "dependencies": {
-    "react": "^16.12.0"
+    "@umijs/preset-react": "1.x",
+    "dumi-theme-mobile": "",
+    "dumi-theme-alita": "",
+    "dumi": "1.1.0-rc.2"
   },
   "devDependencies": {
-    "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.0.5",
-    "dumi": "1.1.0-rc.1",
     "father-build": "^1.18.6",
     "gh-pages": "^3.0.0",
     "lint-staged": "^10.0.7",

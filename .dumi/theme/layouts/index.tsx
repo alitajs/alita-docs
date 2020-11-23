@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
 import Layout from 'dumi-theme-default/src/layout';
 import { IRouteComponentProps } from '@umijs/types';
 import pathToRegexp from 'path-to-regexp';
 import FooterNavigate from '../components/FooterNavigate';
-import '../style/layout.less';
+import '../style/index.less';
 
 const getMeta = (route, location) => {
   const { pathname } = location;
@@ -14,9 +13,12 @@ const getMeta = (route, location) => {
       return routes[key].meta;
     }
   }
-  return {}
-}
-const AlitaLayout: React.FC<IRouteComponentProps> = ({ children, ...props }) => {
+  return {};
+};
+const AlitaLayout: React.FC<IRouteComponentProps> = ({
+  children,
+  ...props
+}) => {
   const { history, route, location } = props;
   const [pathMeta, setPathMeta] = useState<any>({});
   useEffect(() => {
@@ -28,7 +30,11 @@ const AlitaLayout: React.FC<IRouteComponentProps> = ({ children, ...props }) => 
     <Layout {...props}>
       <div className="__dumi-default-alita-content">
         <article>{children}</article>
-        <FooterNavigate history={history} {...pathMeta} />
+        <FooterNavigate
+          history={history}
+          {...pathMeta}
+          style={{ marginTop: '16px' }}
+        />
       </div>
     </Layout>
   );

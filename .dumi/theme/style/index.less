@@ -1,0 +1,23 @@
+@prefix: '__dumi-default';
+
+@dumi-alita-color-light: #73849a;
+@dumi-alita-background: #fff;
+@dumi-alita-content-font-size: 12px;
+
+@dumi-alita-accent-color: #3880ff;
+@dumi-alita-line-rule-color: #edf2f6;
+@dumi-alita-code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas,
+  'Liberation Mono', Menlo, Courier, monospace;
+
+.@{prefix}-alita-content {
+  display: flex;
+
+  > article {
+    flex: 1;
+    min-width: 0;
+
+    > .markdown:first-child > *:first-child {
+      margin-top: 0;
+    }
+  }
+}

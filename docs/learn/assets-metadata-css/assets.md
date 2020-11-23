@@ -17,7 +17,7 @@ nextUrl: '/learn/assets-metadata-css/metadata'
 在组件中使用图片，我们可以将它当作一个模块直接引入，比如我们在 `list` 页面中使用它：
 
 ```js
-import LogoImg from '@/assets/logo.png';
+import LogoImg from '../../../assets/logo.png';
 
 export default function List({ history }) {
   return (
