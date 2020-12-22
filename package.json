@@ -3,7 +3,7 @@
   "name": "alita-docs-dumi",
   "version": "1.0.0",
   "scripts": {
-    "start": "DEBUG=dumi:theme dumi dev",
+    "start": "dumi dev",
     "build": "dumi build",
     "docs:deploy": "gh-pages -d alita-docs",
     "deploy": "npm run build && npm run docs:deploy",

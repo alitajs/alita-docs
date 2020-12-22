@@ -30,11 +30,8 @@ const AlitaLayout: React.FC<IRouteComponentProps> = ({
     <Layout {...props}>
       <div className="__dumi-default-alita-content">
         <article>{children}</article>
-        <FooterNavigate
-          history={history}
-          {...pathMeta}
-          style={{ marginTop: '16px' }}
-        />
+        <div style={{ height: '20px' }}></div>
+        <FooterNavigate history={history} {...pathMeta} />
       </div>
     </Layout>
   );

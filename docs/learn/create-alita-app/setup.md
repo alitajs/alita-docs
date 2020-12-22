@@ -5,7 +5,7 @@ nextText: '编辑页面'
 nextUrl: '/learn/create-alita-app/editing-the-page'
 ---
 
-# 创建 Next.js 应用程序
+# 创建 alita 应用程序
 
 ## 环境配置及基础详解
 
@@ -13,7 +13,7 @@ nextUrl: '/learn/create-alita-app/editing-the-page'
 
 - 如果你尚未安装 **Node.js** , [从此处安装](https://nodejs.org/en/)。 要求 Node.js **10.13** 或更高版本。
 - 正确安装 yarn。（请注意 yarn 的环境变量已正确设置，不然将可能导致全局命令无法找到的问题。）
-- 在本教程中，你将使用自己的文本编辑器(推荐使用VS Code)和终端应用程序。
+- 在本教程中，你将使用自己的文本编辑器(推荐使用 VS Code)和终端应用程序。
 
 ### 创建 alita 应用程序
 
@@ -85,7 +85,6 @@ yarn add alita
 ```
 
 你也可以直接执行 `alita dev` 来完成同样的效果，但是这需要你保证你的全局变量中已经正确安装了 `alita` 命令，你也可以使用诸如 `npx alita dev` 这样的命令，来执行使用当前项目中的 `alita` 命令来启动项目。
-
 
 > 当你的命令拥有多个版本是，比如说全局版本是 2.x，项目中版本是 1.x 时， `npx` 就会非常好用。
 
