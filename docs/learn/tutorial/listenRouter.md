@@ -12,11 +12,11 @@ disableHtmlPreviews: true
 
 这里我们有两种方式来实现(建议使用第一种， demo 中以第一种方式实现)。
 
-## 使用 react hooks
+## 第一种：使用 react hooks
 
-### 第一种：在页面中使用 useEffect
+### 1.在页面中使用 useEffect
 
-./src/page/hero/index.tsx
+#### ./src/page/hero/index.tsx
 
 ```javascript
 import React, { FC, useEffect, useState } from 'react';
@@ -42,7 +42,7 @@ export default HeroPage;
 
 上面的代码如果无法理解，请返回阅读[纯 hooks 数据流](/learn/data-fetching/hooks)
 
-### 第二种：使用 useRequest
+### 2.使用 useRequest
 
 ```javascript
 import React, { FC } from 'react';
@@ -62,10 +62,11 @@ export default HeroPage;
 
 更多关于 useRequest 的用法，请阅读[文档](/guide/use-request)
 
-## 在 dva 中 使用 subscriptions
+## 第二种：在 dva 中 使用 subscriptions
 
 此方法使用了 dva,在存在某些全局数据需要维护，并且这些全局数据存在非 DOM 的使用场景时，即无法使用 react hooks 时，我们才建议使用 dva。以下是根据 dva 的方式处理的，本次教程中未要求。你可以尝试着新建和执行下列的步骤，这将有助于你进一步的掌握 dva 。
-./src/models/hero.ts
+
+### ./src/models/hero.ts
 
 ```js
 import { Effect, Subscription } from 'alita';
