@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@umijs/preset-react": "1.x",
-    "dumi": "1.1.0-rc.2",
+    "dumi": "^1.1.2",
     "dumi-theme-alita": "^0.0.1-beta.4"
   },
   "devDependencies": {

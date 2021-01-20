@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     previewLangs: ['tsx'],
   },
+  exportStatic: {},
   alias: {
     docsroot: '/',
   },
