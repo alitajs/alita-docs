@@ -14,6 +14,10 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alitajs/alita-docs-dumi"
+  },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
