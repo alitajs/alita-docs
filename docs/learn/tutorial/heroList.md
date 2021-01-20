@@ -43,7 +43,7 @@ import { Row, Col } from 'antd';
 </Row>;
 ```
 
-> 注意：这里的 src 为 https://game.gtimg.cn/images/yxzj/img201606/heroimg/513/513.jpg，其中513为英雄的ename，这是我分析出来的。放上去，可用。后续如果官网有修改，这个图片地址不对的话，要替换为新地址。
+> 注意：这里的 src 为 https://game.gtimg.cn/images/yxzj/img201606/heroimg/513/513.jpg， 其中 513 为英雄的 ename，这是我分析出来的。放上去，可用。后续如果官网有修改，这个图片地址不对的话，要替换为新地址。
 
 ### step3 为页面添加样式
 

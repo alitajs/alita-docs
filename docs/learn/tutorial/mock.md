@@ -80,7 +80,7 @@ export default {
 
 比如我们需要取得单个英雄的数据，我们就需要在请求里面携带参数。
 
-./mock/heros.ts
+`./mock/heros.ts`
 
 ```javascript
 'POST /api/herodetails.json': (req, res) => {
