@@ -11,6 +11,12 @@
       }
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/dist/$1" }],
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "/doc_dist/$1"
+  }, {
+    "src": "/(.*)",
+    "dest": "/doc_dist/404.html"
+  }],
   "alias": ["next.alitajs.com"]
 }
