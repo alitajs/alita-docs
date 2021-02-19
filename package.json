@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "alita-docs-dumi",
+  "name": "alita-docs",
   "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
@@ -16,7 +16,7 @@
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alitajs/alita-docs-dumi"
+    "url": "https://github.com/alitajs/alita-docs"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
