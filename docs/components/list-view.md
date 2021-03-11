@@ -248,13 +248,13 @@ export interface CartListAttributes {
 
 ## 更新日志
 
-### 0.3.7
-
-> fix: 解决首屏加载条目不能填充 listview 视图时，无法全屏
-
 ### 1.0.1-beta
 
 > 1. 替换@umijs/hooks(已废弃)为@ahooks。
 > 2. 优化上拉刷新动画、加载更多动画。
 > 3. 增加分页加载起始页`startPage`入参
 > 4. 修改 CartListView。
+
+### 0.3.7
+
+> fix: 解决首屏加载条目不能填充 listview 视图时，无法全屏
