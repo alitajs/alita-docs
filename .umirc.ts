@@ -5,6 +5,15 @@ export default defineConfig({
   favicon: 'https://alitajs.com/assets/img/meta/apple-touch-icon-114x114.png',
   logo: 'https://alitajs.com/assets/img/meta/apple-touch-icon-180x180.png',
   outputPath: 'alita-docs',
+  sitemap: {
+    hostname: 'https://alitajs.com',
+  },
+  ghPages: {
+    autoTag: true,
+    branch: 'gh-pages',
+    silent: true,
+    repo: `https://${process.env.GH_TOKEN}@github.com/alitajs/alita-docs.git`,
+  },
   mode: 'site',
   resolve: {
     previewLangs: ['tsx'],
