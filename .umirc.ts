@@ -10,9 +10,6 @@ export default defineConfig({
   },
   ghPages: {
     autoTag: true,
-    branch: 'gh-pages',
-    silent: true,
-    repo: `https://${process.env.GH_TOKEN}@github.com/alitajs/alita-docs.git`,
   },
   mode: 'site',
   resolve: {

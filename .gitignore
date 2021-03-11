@@ -19,5 +19,4 @@
 .umi-production
 .umi-test
 .env.local
-alita-docs
 docs/**/*.json
