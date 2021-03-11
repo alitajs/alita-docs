@@ -52,7 +52,8 @@ export default IndexPage;
 | renderFooter       | 重新渲染页脚，会传入三个参数，表示列表页面的当前状态。                                                                                                                                                                                                                   | ( noMore, loadingMore, loadMore?) => React.ReactElement | ''               | 否       |
 | isTabsPage         | 在 Tabs 页面中使用时需要配置，高度需要减去底部 tabs 高度                                                                                                                                                                                                                 | false                                                   | 否               |
 | onChange           | 数据变化时回调，你可以通过它取得当前列表的所有值                                                                                                                                                                                                                         | (data)=>void                                            | 否               |
-| autoFullViewPort   | 首屏数据不能覆盖全屏时，自动加载更多填充屏幕，解决因首次加载数据条目太少导致无法触发加载更多的 bug，`版本0.3.7`支持。                                                                                                                                                    | boolean                                                 | 否               | 否       |
+| autoFullViewPort   | 首屏数据不能覆盖全屏时，自动加载更多填充屏幕，解决因首次加载数据条目太少导致无法触发加载更多的 bug，`版本0.3.7`以后支持。                                                                                                                                                | boolean                                                 | 否               | 否       |
+| startPage          | 起始加载页，如果`startPage`设置为 0, 刷新时会将`pageNum`重置为 0， `版本1.0.1-beta`以后支持。                                                                                                                                                                            | number                                                  | 1                | 否       |
 | 其他 ListView 参数 | 能接收 ListView 的其他参数，请注意不要设置 'onEndReached'、 'dataSource'                                                                                                                                                                                                 | 无                                                      | 否               |
 
 > 如果不需要下拉刷新的功能，可以设置 pullToRefresh={<></>}
@@ -244,3 +245,16 @@ export interface CartListAttributes {
 | getListData      | 获取当前列表中的值，与 onChange 中取到的值一致             |
 | getSelectDate    | 获取当前列表中被选中的值，与 onSelectChange 中取到的值一致 |
 | reloadDataSource | 手动刷新列表数据，从初始值开始重新请求                     |
+
+## 更新日志
+
+### 0.3.7
+
+> fix: 解决首屏加载条目不能填充 listview 视图时，无法全屏
+
+### 1.0.1-beta
+
+> 1. 替换@umijs/hooks(已废弃)为@ahooks。
+> 2. 优化上拉刷新动画、加载更多动画。
+> 3. 增加分页加载起始页`startPage`入参
+> 4. 修改 CartListView。
