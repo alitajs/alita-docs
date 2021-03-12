@@ -153,8 +153,8 @@ export default defineConfig({
       { title: '移动端表单方案', path: '/components/d-d' },
       { title: '手势密码', path: '/components/gesture-password' },
       { title: '列表页面(加载更多)', path: '/components/list-view' },
-      { title: '业务组件', path: 'https://ui.alitajs.com' },
-      { title: '图表组件', path: 'https://charts.alitajs.com' },
+      { title: '业务组件库', path: 'https://ui.alitajs.com' },
+      { title: '图表组件库', path: 'https://charts.alitajs.com' },
     ],
   },
   navs: [
