@@ -8,6 +8,11 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://alitajs.com',
   },
+  ghPages: {
+    branch: 'gh-pages',
+    silent: true,
+    repo: `https://${process.env.GH_TOKEN}@github.com/alitajs/alita-docs.git`,
+  },
   mode: 'site',
   resolve: {
     previewLangs: ['tsx'],
