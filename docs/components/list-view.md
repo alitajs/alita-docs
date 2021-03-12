@@ -257,4 +257,4 @@ export interface CartListAttributes {
 
 ### 0.3.7
 
-> fix: 解决首屏加载条目不能填充 listview 视图时，无法全屏
+> 解决首屏加载条目不能填充`listview`容器时，无法触发加载更多
