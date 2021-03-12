@@ -5,6 +5,9 @@ export default defineConfig({
   favicon: 'https://alitajs.com/assets/img/meta/apple-touch-icon-114x114.png',
   logo: 'https://alitajs.com/assets/img/meta/apple-touch-icon-180x180.png',
   outputPath: 'alita-docs',
+  sitemap: {
+    hostname: 'https://alitajs.com',
+  },
   mode: 'site',
   resolve: {
     previewLangs: ['tsx'],
