@@ -8,9 +8,6 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://alitajs.com',
   },
-  ghPages: {
-    autoTag: true,
-  },
   mode: 'site',
   resolve: {
     previewLangs: ['tsx'],
