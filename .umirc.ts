@@ -147,6 +147,15 @@ export default defineConfig({
         ],
       },
     ],
+    '/components': [
+      { title: '移动端全局布局', path: '/components/alita-layout' },
+      { title: '移动端拖拽实现', path: '/components/d-a-d' },
+      { title: '移动端表单方案', path: '/components/d-d' },
+      { title: '手势密码', path: '/components/gesture-password' },
+      { title: '列表页面(加载更多)', path: '/components/list-view' },
+      { title: '业务组件', path: 'https://ui.alitajs.com' },
+      { title: '图表组件', path: 'https://charts.alitajs.com' },
+    ],
   },
   navs: [
     // {
