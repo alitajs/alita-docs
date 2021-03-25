@@ -1,9 +1,9 @@
 ---
-title: alita - 基于 Umi 的场景化框架
+title: alita - 基于 Umi 的移动端开发方案
 order: 10
 hero:
   title: alita
-  desc: 基于 Umi 的场景化框架
+  desc: 基于 Umi 的移动端开发方案
   actions:
     - text: 入门教程
       link: /learn/create-alita-app
