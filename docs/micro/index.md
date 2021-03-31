@@ -1,5 +1,5 @@
 ---
-title: alita 微应用 - 使用 H5 实现的私域的小程序方案
+title: alita 微应用
 order: 10
 nav:
   title: 微应用(beta)
