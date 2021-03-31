@@ -2,8 +2,8 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   title: 'alita',
-  favicon: 'https://alitajs.com/assets/img/meta/apple-touch-icon-114x114.png',
-  logo: 'https://alitajs.com/assets/img/meta/apple-touch-icon-180x180.png',
+  favicon: 'https://avatars.githubusercontent.com/u/49136103?s=200&v=4',
+  logo: 'https://avatars.githubusercontent.com/u/49136103?s=200&v=4',
   outputPath: 'alita-docs',
   sitemap: {
     hostname: 'https://alitajs.com',
