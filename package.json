@@ -31,7 +31,7 @@
     "dumi": "^1.1.11",
     "dumi-theme-alita": "^0.0.2",
     "sitemap": "^6.4.0",
-    "umi-plugin-gh-pages-test": "^1.1.6"
+    "umi-plugin-gh-pages": "^1.0.1"
   },
   "devDependencies": {
     "father-build": "^1.19.3",
