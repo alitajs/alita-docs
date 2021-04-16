@@ -258,3 +258,55 @@ export interface CartListAttributes {
 ### 0.3.7
 
 > 解决首屏加载条目不能填充`listview`容器时，无法触发加载更多
+
+## 常见问题
+
+1. 当服务端数据返回格式多层嵌套时，如何设置`alias`?
+
+   > 答: 目前`alias`是针对同层级结构。为了满足组件使用，需要你在 server 层转换数据格式。示例如下：
+
+   ```typescript
+   // 服务端数据
+   {
+     resultCode: 0,
+     resultMsg: '',
+     resultObject: {
+       total: 100,
+       data: [
+         { key: 0, label: "测试" },
+         { key: 1, label: "测试1" },
+         { key: 2, label: "测试2" }
+       ],
+       ...
+     }
+   }
+
+   // 需要在Promise函数中转化
+   const call = async (params) => {
+     return request(params).then(res => ({ data: res.resultObject.data, total: res.total }));
+   }
+
+    // 使用示例
+   <LoadMoreListView
+      autoFullViewPort
+      initialListSize={25}
+      ref={loadMoreList}
+      requestFunc={loadmore}
+      renderRow={row}
+      // 在这里调用Promise函数
+      requestParams={call}
+      startPage={10}
+      alias={{
+        offset: 'abc',
+        pageSize: 'pagesize',
+        page: 'pageNum',
+        data: 'a',
+        total: 't',
+      }}
+      noData={<div style={{ height: '100px', backgroundColor: '#f40' }}>123456</div>}
+    />
+   ```
+
+```
+
+```
