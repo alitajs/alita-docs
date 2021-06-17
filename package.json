@@ -28,6 +28,7 @@
     ]
   },
   "dependencies": {
+    "@umijs/plugin-analytics": "^0.2.2",
     "dumi": "^1.1.11",
     "dumi-theme-alita": "^0.0.2",
     "sitemap": "^6.4.0",
