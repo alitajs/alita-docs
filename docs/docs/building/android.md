@@ -27,7 +27,7 @@ export default defineConfig({
 ## 添加平台
 
 ```bash
-alita platforms --android
+alita cordova --android
 ```
 
 ## 开发调试
