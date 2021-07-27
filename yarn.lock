@@ -3517,10 +3517,10 @@ dumi-assets-types@1.0.0:
   resolved "https://registry.yarnpkg.com/dumi-assets-types/-/dumi-assets-types-1.0.0.tgz#d5368cb11045b203bf1ef1080e553b2287a2ec81"
   integrity sha512-7nhSeWM15vybbUAMPLZsdls2jKoHB2UU4P1RM6kLPucuS8eC/HSmufquFqTTYtX4oIDLHGtil/dVtMreNGwhdA==
 
-dumi-theme-alita@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/dumi-theme-alita/-/dumi-theme-alita-0.0.2.tgz#52f30b2b6105c1a5e02f77c02cc3d6fde7f187fa"
-  integrity sha512-vxH7A6zM9l/yZO4HYDZkrLOXt5jllGlYLnfqaBmjhdn2HXHSKdV7OxmjVgJEgZpGpVYLb2YkxEkb8s0D+A9xqg==
+dumi-theme-alita@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/dumi-theme-alita/-/dumi-theme-alita-0.0.3.tgz#71f758a547495c44bc17102f4b86d0c3fdf2c260"
+  integrity sha512-69IQ4XfUVPQfRJZahBsYh8VmtXoZlO9LQodrjh4KiVmS4Vl2Ru10lp9P1FLcvvCU1Lro3xlQ1B34AC4yDsx4kA==
   dependencies:
     "@ant-design/icons" "^4.2.2"
     antd "4.4.3"

@@ -67,6 +67,7 @@ export default defineConfig({
         path: '/docs/faq',
       },
     ],
+    '/video': [{ title: '什么是 alita', path: '/video/index' }],
     '/learn': [
       {
         title: '创建 alita 应用程序',
@@ -194,6 +195,10 @@ export default defineConfig({
     {
       title: 'GitHub',
       path: 'https://github.com/alitajs/alita',
+    },
+    {
+      title: '印记中文',
+      path: 'https://docschina.org/',
     },
   ],
 });

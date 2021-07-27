@@ -1,11 +1,11 @@
-# @alitajs/native
+# @alitajs/cordova-native
 
 ## Usage
 
 Install via yarn or npm.
 
 ```bash
-$ yarn add @umijs/native
+$ yarn add @umijs/cordova-native
 ```
 
 Configure it in the `.umirc.js`.
@@ -13,7 +13,7 @@ Configure it in the `.umirc.js`.
 ```js
 export default {
   plugins: ['@alitajs/native'],
-  native: [],
+  cordovanative: [],
 };
 ```
 

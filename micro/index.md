@@ -4,6 +4,7 @@ order: 10
 nav:
   title: 微应用(beta)
   order: 6
+  hidden: true
 hero:
   title: alita 微应用
   desc: 使用 H5 实现的私域的小程序方案

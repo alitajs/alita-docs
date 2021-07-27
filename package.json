@@ -30,7 +30,7 @@
   "dependencies": {
     "@umijs/plugin-analytics": "^0.2.2",
     "dumi": "^1.1.11",
-    "dumi-theme-alita": "^0.0.2",
+    "dumi-theme-alita": "^0.0.3",
     "sitemap": "^6.4.0",
     "umi-plugin-gh-pages": "^1.0.1"
   },
