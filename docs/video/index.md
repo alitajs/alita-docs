@@ -5,8 +5,8 @@ nav:
 toc: menu
 order: 1
 firstPost: true
-nextText: '环境配置及基础详解'
-nextUrl: '/learn/create-alita-app/setup'
+nextText: '环境搭建及基本使用'
+nextUrl: '/video/environment'
 ---
 
 # Alita 框架是什么？
