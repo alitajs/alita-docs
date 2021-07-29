@@ -67,7 +67,12 @@ export default defineConfig({
         path: '/docs/faq',
       },
     ],
-    '/video': [{ title: '什么是 alita', path: '/video/index' }],
+    '/video': [
+      { title: '什么是 alita', path: '/video/index' },
+      { title: '环境搭建及基本使用', path: '/video/environment' },
+      { title: 'layout and keepalive', path: '/video/layout' },
+      { title: 'http、proxy、mock', path: '/video/request' },
+    ],
     '/learn': [
       {
         title: '创建 alita 应用程序',

@@ -4,8 +4,8 @@ nav:
   order: 4
 toc: menu
 order: 1
-nextText: '环境配置及基础详解'
-nextUrl: '/learn/create-alita-app/setup'
+nextText: 'http、proxy、mock'
+nextUrl: '/video/request'
 ---
 
 # layout and keepalive
