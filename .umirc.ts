@@ -72,6 +72,9 @@ export default defineConfig({
       { title: '环境搭建及基本使用', path: '/video/environment' },
       { title: 'layout and keepalive', path: '/video/layout' },
       { title: 'http、proxy、mock', path: '/video/request' },
+      { title: '@alitajs/listview 分页请求库', path: '/video/listview' },
+      { title: '@alitajs/dform 动态表单库', path: '/video/dform' },
+      { title: 'Alita dvajs', path: '/video/dva' },
     ],
     '/learn': [
       {
