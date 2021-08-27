@@ -22,6 +22,66 @@ Alita 的设计初衷就是面向场景化的方案，所以我们的配置方�
 一般开发移动端页面，先配置 `appType:'h5'` 进行开发调试，当需要使用 Cordova 打包，或者需要调试一些原生能力时，将配置改成 `appType:'cordova'`。
 详细的如何运行，请查阅[运行预览](/docs/building/running)
 
+## ssr [2.4.18]
+
+- Type: `object`
+- Default: `false`
+
+配置是否开启服务端渲染，配置如下：
+
+```js
+{
+  // 一键开启
+  ssr: {
+    // 更多配置
+    // forceInitial: false,
+    // removeWindowInitialProps: false
+    // devServerRender: true,
+    // mode: 'string',
+    // staticMarkup: false,
+  }
+}
+```
+
+配置说明：
+
+- `forceInitial`：客户端渲染时强制执行 `getInitialProps` 方法，常见的场景：静态站点希望每次访问时保持数据最新，以客户端渲染为主。
+- `removeWindowInitialProps`: HTML 中移除 `window.getInitialProps` 变量，避免 HTML 中有大量数据影响 SEO 效果，场景：静态站点
+- `devServerRender`：在 `umi dev` 开发模式下，执行渲染，用于 umi SSR 项目的快速开发、调试，服务端渲染效果所见即所得，同时我们考虑到可能会与服务端框架（如 [Egg.js](https://eggjs.org/)、[Express](https://expressjs.com/)、[Koa](https://koajs.com/)）结合做本地开发、调试，关闭后，在 `umi dev` 下不执行服务端渲染，但会生成 `umi.server.js`（Umi SSR 服务端渲染入口文件），渲染开发流程交由开发者处理。
+- `mode`：渲染模式，默认使用 `string` 字符串渲染，同时支持流式渲染 `mode: 'stream'`，减少 TTFB（浏览器开始收到服务器响应数据的时间） 时长。
+- `staticMarkup`：html 上的渲染属性（例如 React 渲染的 `data-reactroot`），常用于静态站点生成的场景上。
+
+注意：
+
+- 开启后，执行 `umi dev` 时，访问 http://localhost:8000 ，默认将单页应用（SPA）渲染成 html 片段，片段可以通过开发者工具『显示网页源代码』进行查看。
+- 执行 `umi build`，产物会额外生成 `umi.server.js` 文件，此文件运行在 Node.js 服务端，用于做服务端渲染，渲染 html 片段。
+- 如果应用没有 Node.js 服务端，又希望生成 html 片段做 SEO（搜索引擎优化），可以开启 [exportStatic](#exportstatic) 配置，会在执行 `umi build` 构建时进行**预渲染**。
+- `removeWindowInitialProps` 与 `forceInitial` 不可同时使用
+
+演示 demo： https://github.com/alitajs/next-alita-app
+
+### 项目中需要改造的
+
+- [ ] 更新"@alitajs/list-view": "1.0.7" "alita": "2.8.18"
+- [ ] 安装 react-document-title
+- [ ] 如果提示找不到 typescript 就安装 yarn add typescript --dev
+- [ ] 修改配置 ssr: {} 另外要根据部署环境修改 publicPath
+- [ ] 项目中使用到 document 和 window 的地方，都需要使用 isBrowser 判断处理
+
+`import { isBrowser } from 'alita';`
+
+或者
+
+```
+export const isBrowser = (): boolean =>
+  typeof window !== 'undefined' &&
+  typeof window.document !== 'undefined' &&
+  typeof window.document.createElement !== 'undefined';
+
+```
+
+- [ ] 编写服务端，koa demo 可以参考 https://github.com/alitajs/next-alita-app/blob/master/server.js
+
 ## aconsole
 
 一些 alita 项目的移动端调试工具的集合。
