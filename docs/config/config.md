@@ -82,7 +82,7 @@ export const isBrowser = (): boolean =>
 
 - [ ] 编写服务端，koa demo 可以参考 https://github.com/alitajs/next-alita-app/blob/master/server.js
 
-## aconsole
+## aconsole [2.8.2+]
 
 一些 alita 项目的移动端调试工具的集合。
 
