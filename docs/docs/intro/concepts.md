@@ -146,7 +146,7 @@ export default function(props) {
 
 ## 自适应样式
 
-自适应样式是 Alita 的内置功能，当 `appType:pc | cordova` 的时候，默认开启了 Umi 的 hd 方案。当在 less 文件中使用 px 时，会被自动转换成 rem 。设计师以 iphone6 为标准出设计稿的话，1rpx=0.5px=1 物理像素。Photoshop 里面量出来的尺寸为物理像素点。所以可以直接使用标注尺寸数据。
+自适应样式是 Alita 的内置功能，当 `appType:h5 | cordova` 的时候，默认开启了 Umi 的 hd 方案。当在 less 文件中使用 px 时，会被自动转换成 rem 。设计师以 iphone6 为标准出设计稿的话，1rpx=0.5px=1 物理像素。Photoshop 里面量出来的尺寸为物理像素点。所以可以直接使用标注尺寸数据。
 
 ## 导航
 
