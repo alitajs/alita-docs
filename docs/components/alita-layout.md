@@ -58,8 +58,8 @@ const tabList: TabBarListItem[] = [
   {
     pagePath: '/',
     text: '首页',
-    iconPath: img,
-    selectedIconPath: img,
+    iconPath: 'img',
+    selectedIconPath: 'img',
     title: '首页',
     iconSize: '',
     badge: '',
@@ -112,16 +112,16 @@ const Page = () => {
       {
         pagePath: '/home',
         text: 'home',
-        iconPath: img,
-        selectedIconPath: img,
+        iconPath: 'img',
+        selectedIconPath: 'img',
         title: 'home',
       },
       {
         pagePath: '/', // 原路由
         replace: '/index', // 替换操作
         text: 'dd',
-        iconPath: img,
-        selectedIconPath: img,
+        iconPath: 'img',
+        selectedIconPath: 'img',
         title: 'dd',
       },
     ]);
