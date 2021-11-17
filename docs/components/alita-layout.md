@@ -29,25 +29,17 @@ render(<BasicLayout />, document.getElementById('root'));
 ## Demo
 
 ```ts
-import {
-  NavBarProps,
-  TitleListItem,
-  NavBarListItem,
-  TabBarProps,
-  TabBarListItem,
-  history,
-} from 'alita';
 
 const titleList: TitleListItem[] = [
   {
-    pagePath: '/aa',
-    title: 'a页面',
+    pagePath: '/',
+    title: '首页',
   },
 ];
 
 const navList: NavBarListItem[] = [
   {
-    pagePath: '/aa',
+    pagePath: '/',
     navBar: {},
   },
 ];
@@ -64,22 +56,19 @@ const navBar: NavBarProps = {
 
 const tabList: TabBarListItem[] = [
   {
-    pagePath: '/aa',
-    text: 'aa',
+    pagePath: '/',
+    text: '首页',
     iconPath: img,
     selectedIconPath: img,
-    title: 'aa',
+    title: '首页',
     iconSize: '',
     badge: '',
   },
   {
-    pagePath: '/bb',
-    text: 'bb',
-    iconPath: img,
-    selectedIconPath: img,
-    title: 'bb',
-    iconSize: '',
-    badge: '',
+    pagePath: '/list',
+    text: 'list',
+    title: 'list',
+    ...
   },
 ];
 
@@ -117,19 +106,19 @@ const Page = () => {
 
     setTabBarList([
       {
-        pagePath: '/bb',
+        pagePath: '/list',
         remove: true, // 删除操作
       },
       {
-        pagePath: '/ee',
-        text: 'ee',
+        pagePath: '/home',
+        text: 'home',
         iconPath: img,
         selectedIconPath: img,
-        title: 'ee',
+        title: 'home',
       },
       {
-        pagePath: '/aa',
-        replace: '/dd', // 替换操作
+        pagePath: '/', // 原路由
+        replace: '/index', // 替换操作
         text: 'dd',
         iconPath: img,
         selectedIconPath: img,
