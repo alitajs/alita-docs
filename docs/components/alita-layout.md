@@ -225,6 +225,8 @@ const tabBar: TarBarProp
 | badge            | string   | 否   | badge                                                  |
 | onPress          | function | 否   | 点击事件                                               |
 | title            | string   | 否   | 定义页面标题                                           |
+| remove           | boolean  | 否   | 是否删除当前的 tabItem                                 |
+| replace          | string   | 否   | 需要替换的 tabItem 路由                                |
 
 > 关于页面标题，声明权重如下：
 > titleList > list.title > list.text > documentTitle > ''
