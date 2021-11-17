@@ -26,6 +26,133 @@ import BasicLayout from '@alitajs/alita-layout';
 render(<BasicLayout />, document.getElementById('root'));
 ```
 
+## Demo
+
+```ts
+import {
+  NavBarProps,
+  TitleListItem,
+  NavBarListItem,
+  TabBarProps,
+  TabBarListItem,
+  history,
+} from 'alita';
+
+const titleList: TitleListItem[] = [
+  {
+    pagePath: '/aa',
+    title: 'a页面',
+  },
+];
+
+const navList: NavBarListItem[] = [
+  {
+    pagePath: '/aa',
+    navBar: {},
+  },
+];
+
+const navBar: NavBarProps = {
+  mode: 'light',
+  navList,
+  fixed: true,
+  hideNavBar: false,
+  onLeftClick: () => {
+    history.goBack();
+  },
+};
+
+const tabList: TabBarListItem[] = [
+  {
+    pagePath: '/aa',
+    text: 'aa',
+    iconPath: img,
+    selectedIconPath: img,
+    title: 'aa',
+    iconSize: '',
+    badge: '',
+  },
+  {
+    pagePath: '/bb',
+    text: 'bb',
+    iconPath: img,
+    selectedIconPath: img,
+    title: 'bb',
+    iconSize: '',
+    badge: '',
+  },
+];
+
+const tabBar: TabBarProps = {
+  color: '#696D6C',
+  selectedColor: '#3562AD',
+  borderStyle: 'white',
+  position: 'bottom',
+  list: tabList,
+};
+
+export const mobileLayout = {
+  documentTitle: '默认标题',
+  navBar,
+  tabBar,
+  titleList,
+};
+```
+
+## 动态配置 navBar、tabBar
+
+```js
+import React, { useEffect } from 'react';
+import { setPageNavBar, setTabBarList } from 'alita';
+
+const Page = () => {
+  useEffect(() => {
+    setPageNavBar({
+      pagePath: '/',
+      navBar: {
+        pageTitle: '自定义标题',
+        // 剩余参数请参考 API NavBarProps
+      },
+    });
+
+    setTabBarList([
+      {
+        pagePath: '/bb',
+        remove: true, // 删除操作
+      },
+      {
+        pagePath: '/ee',
+        text: 'ee',
+        iconPath: img,
+        selectedIconPath: img,
+        title: 'ee',
+      },
+      {
+        pagePath: '/aa',
+        replace: '/dd', // 替换操作
+        text: 'dd',
+        iconPath: img,
+        selectedIconPath: img,
+        title: 'dd',
+      },
+    ]);
+  }, []);
+  return <></>;
+};
+```
+
+### setTabBarList 使用介绍
+
+这里可以传递数组进行多个 `tabItem` 的配置，也可以传递单个 `tabItem` 对象进行配置。
+
+**当对象里存在 `remove` 则代表删除该项 `tabItem`。**
+
+**当对象里存在 `replace` 则代表替换该项 `tabItem`。**
+
+当对象里的 `pagePath` 不存在初始的 `tabList` 时，则会新增该项 `tabItem`。
+
+当对象里的 `pagePath` 存在初始的 `tabList` 时，则会修改该项 `tabItem`。
+
 ## API
 
 ### 所有参数说明
