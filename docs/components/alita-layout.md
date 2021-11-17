@@ -26,8 +26,6 @@ import BasicLayout from '@alitajs/alita-layout';
 render(<BasicLayout />, document.getElementById('root'));
 ```
 
-**在 `alita` 里使用可以参考[mobileLayout](/config/config#mobilelayout)**
-
 ## API
 
 ### 所有参数说明
