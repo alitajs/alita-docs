@@ -14,7 +14,7 @@ export default defineConfig({
   },
   ghPages: {
     branch: 'gh-pages',
-    silent: true,
+    silent: false,
     name: 'xiaohuoni',
     email: '448627663@qq.com',
     repo: `https://${process.env.GH_TOKEN}@github.com/alitajs/alita-docs.git`,
