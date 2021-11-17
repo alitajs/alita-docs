@@ -166,6 +166,28 @@ const SettingsPage: FC<> = ({ settings, dispatch, location }) => {
       text: 'home',
       badge: '1',
     });
+
+    setTabBarList([
+      {
+        pagePath: '/list',
+        remove: true, // 删除操作
+      },
+      {
+        pagePath: '/home',
+        text: 'home',
+        iconPath: 'img',
+        selectedIconPath: 'img',
+        title: 'home',
+      },
+      {
+        pagePath: '/', // 原路由
+        replace: '/index', // 替换操作
+        text: '首页',
+        iconPath: 'img',
+        selectedIconPath: 'img',
+        title: '首页',
+      },
+    ]);
   }, []);
   const { name } = settings;
 
@@ -183,7 +205,7 @@ const SettingsPage: FC<> = ({ settings, dispatch, location }) => {
 | rightContent |       导航右边内容       |        any        |              无              |
 | onLeftClick  |     导航左边点击回调     | (e: Object): void |              无              |
 
-`setTabBarList` 接收一个[对象参数](/components/alita-layout#list-)
+`setTabBarList` 接收一个[对象 或 对象数组](/components/alita-layout#list-)
 
 | 属性             | 类型     | 必填 | 说明                                                   |
 | ---------------- | -------- | ---- | ------------------------------------------------------ |
@@ -195,6 +217,8 @@ const SettingsPage: FC<> = ({ settings, dispatch, location }) => {
 | badge            | string   | 否   | badge                                                  |
 | onPress          | function | 否   | 点击事件                                               |
 | title            | string   | 否   | 定义页面标题                                           |
+| remove           | boolean  | 否   | 是否删除当前的 tabItem                                 |
+| replace          | string   | 否   | 需要替换的 tabItem 路由                                |
 
 > 注意：在使用 `setPageNavBar` 设置响应函数时，不要使用 `hooks` 方法。（可能会有闭包问题。）尽量使用 `dispatch` 抛出事件。
 

@@ -26,121 +26,7 @@ import BasicLayout from '@alitajs/alita-layout';
 render(<BasicLayout />, document.getElementById('root'));
 ```
 
-## Demo
-
-```ts
-
-const titleList: TitleListItem[] = [
-  {
-    pagePath: '/',
-    title: '首页',
-  },
-];
-
-const navList: NavBarListItem[] = [
-  {
-    pagePath: '/',
-    navBar: {},
-  },
-];
-
-const navBar: NavBarProps = {
-  mode: 'light',
-  navList,
-  fixed: true,
-  hideNavBar: false,
-  onLeftClick: () => {
-    history.goBack();
-  },
-};
-
-const tabList: TabBarListItem[] = [
-  {
-    pagePath: '/',
-    text: '首页',
-    iconPath: 'img',
-    selectedIconPath: 'img',
-    title: '首页',
-    iconSize: '',
-    badge: '',
-  },
-  {
-    pagePath: '/list',
-    text: 'list',
-    title: 'list',
-    ...
-  },
-];
-
-const tabBar: TabBarProps = {
-  color: '#696D6C',
-  selectedColor: '#3562AD',
-  borderStyle: 'white',
-  position: 'bottom',
-  list: tabList,
-};
-
-export const mobileLayout = {
-  documentTitle: '默认标题',
-  navBar,
-  tabBar,
-  titleList,
-};
-```
-
-## 动态配置 navBar、tabBar
-
-```js
-import React, { useEffect } from 'react';
-import { setPageNavBar, setTabBarList } from 'alita';
-
-const Page = () => {
-  useEffect(() => {
-    setPageNavBar({
-      pagePath: '/',
-      navBar: {
-        pageTitle: '自定义标题',
-        // 剩余参数请参考 API NavBarProps
-      },
-    });
-
-    setTabBarList([
-      {
-        pagePath: '/list',
-        remove: true, // 删除操作
-      },
-      {
-        pagePath: '/home',
-        text: 'home',
-        iconPath: 'img',
-        selectedIconPath: 'img',
-        title: 'home',
-      },
-      {
-        pagePath: '/', // 原路由
-        replace: '/index', // 替换操作
-        text: 'dd',
-        iconPath: 'img',
-        selectedIconPath: 'img',
-        title: 'dd',
-      },
-    ]);
-  }, []);
-  return <></>;
-};
-```
-
-### setTabBarList 使用介绍(仅支持 `v2.8.25+` 的 alita 版本)
-
-这里可以传递数组进行多个 `tabItem` 的配置，也可以传递单个 `tabItem` 对象进行配置。
-
-**当对象里存在 `remove` 则代表删除该项 `tabItem`。**
-
-**当对象里存在 `replace` 则代表替换该项 `tabItem`。**
-
-当对象里的 `pagePath` 不存在初始的 `tabList` 时，则会新增该项 `tabItem`。
-
-当对象里的 `pagePath` 存在初始的 `tabList` 时，则会修改该项 `tabItem`。
+**在 `alita` 里使用可以参考[mobileLayout](/config/config#mobilelayout)**
 
 ## API
 
@@ -214,8 +100,6 @@ const tabBar: TarBarProp
 | badge            | string   | 否   | badge                                                  |
 | onPress          | function | 否   | 点击事件                                               |
 | title            | string   | 否   | 定义页面标题                                           |
-| remove           | boolean  | 否   | 是否删除当前的 tabItem                                 |
-| replace          | string   | 否   | 需要替换的 tabItem 路由                                |
 
 > 关于页面标题，声明权重如下：
 > titleList > list.title > list.text > documentTitle > ''
