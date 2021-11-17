@@ -141,7 +141,7 @@ const Page = () => {
 };
 ```
 
-### setTabBarList 使用介绍
+### setTabBarList 使用介绍(仅支持 `v2.8.25+` 的 alita 版本)
 
 这里可以传递数组进行多个 `tabItem` 的配置，也可以传递单个 `tabItem` 对象进行配置。
 
