@@ -12,6 +12,8 @@ The generic h5 layout in umi uses antd-mobile.
 > umi@2 和 alita@1 请使用 1.x 版本
 > 2.x 版本只支持 umi@3 和 alita@2
 
+**在 `alita` 里使用可以参考[mobileLayout](/config/config#mobilelayout)**
+
 ## 使用
 
 ```bash

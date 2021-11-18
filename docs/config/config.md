@@ -188,6 +188,28 @@ const SettingsPage: FC<> = ({ settings, dispatch, location }) => {
         title: '首页',
       },
     ]);
+
+    setTabBarList([
+      {
+        pagePath: '/list',
+        remove: true, // 删除操作
+      },
+      {
+        pagePath: '/home',
+        text: 'home',
+        iconPath: 'img',
+        selectedIconPath: 'img',
+        title: 'home',
+      },
+      {
+        pagePath: '/', // 原路由
+        replace: '/index', // 替换操作
+        text: '首页',
+        iconPath: 'img',
+        selectedIconPath: 'img',
+        title: '首页',
+      },
+    ]);
   }, []);
   const { name } = settings;
 
@@ -195,7 +217,7 @@ const SettingsPage: FC<> = ({ settings, dispatch, location }) => {
 };
 ```
 
-`setPageNavBar` 接收一个[对象参数](/components/alita-layout#navlist-)，有两个值，一个是需要修改的 `pagePath`。第二个参数是 `navBar` 配置的是 `antd-mobile` 的 `NavBar`,支持的参数有
+`setPageNavBar` 接收一个[对象 或 对象数组](/components/alita-layout#navlist-)，有两个值，一个是需要修改的 `pagePath`。第二个参数是 `navBar` 配置的是 `antd-mobile` 的 `NavBar`,支持的参数有
 
 | 属性         |           说明           |       类型        |            默认值            |
 | :----------- | :----------------------: | :---------------: | :--------------------------: |
