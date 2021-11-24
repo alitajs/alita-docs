@@ -125,5 +125,5 @@ const tabBar: TarBarProp
 
 | 属性     | 说明              | 类型        | 默认值 |
 | -------- | ----------------- | ----------- | ------ |
-| pathName | 路由名称          | string      | 无     |
+| pagePath | 路由名称          | string      | 无     |
 | navBar   | 当前路由的 navBar | NavBarProps | 无     |
