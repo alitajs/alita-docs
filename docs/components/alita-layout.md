@@ -90,16 +90,18 @@ const tabBar: TarBarProp
 
 ### list 参数说明
 
-| 属性             | 类型     | 必填 | 说明                                                   |
-| ---------------- | -------- | ---- | ------------------------------------------------------ |
-| pagePath         | string   | 是   | 页面路径，必须在 pages 中先定义                        |
-| text             | string   | 是   | tab 上按钮文字                                         |
-| iconPath         | string   | 是   | 图片路径，当 position 为 top 时，不显示 icon。         |
-| selectedIconPath | string   | 是   | 选中时的图片路径，当 position 为 top 时，不显示 icon。 |
-| iconSize         | string   | 否   | 0.44rem                                                |
-| badge            | string   | 否   | badge                                                  |
-| onPress          | function | 否   | 点击事件                                               |
-| title            | string   | 否   | 定义页面标题                                           |
+| 属性             | 类型      | 必填 | 说明                                                   |
+| ---------------- | --------- | ---- | ------------------------------------------------------ |
+| pagePath         | string    | 是   | 页面路径，必须在 pages 中先定义                        |
+| text             | string    | 否   | tab 上按钮文字                                         |
+| iconPath         | string    | 否   | 图片路径，当 position 为 top 时，不显示 icon。         |
+| selectedIconPath | string    | 否   | 选中时的图片路径，当 position 为 top 时，不显示 icon。 |
+| iconSize         | string    | 否   | 0.44rem                                                |
+| badge            | string    | 否   | badge                                                  |
+| onPress          | function  | 否   | 点击事件                                               |
+| title            | string    | 否   | 定义页面标题                                           |
+| icon             | ReactNode | 否   | 自定义 tab 样式                                        |
+| selectedIcon     | ReactNode | 否   | 自定义选中 tab 样式                                    |
 
 > 关于页面标题，声明权重如下：
 > titleList > list.title > list.text > documentTitle > ''
