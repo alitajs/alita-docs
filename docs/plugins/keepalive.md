@@ -52,7 +52,7 @@ const BasicLayout: React.FC = props => {
 比如：
 
 ```js
-import { dropByCacheKey } from 'umi';
+import { dropByCacheKey, patchKeepAlive } from 'umi';
 ```
 
 接口包含
@@ -72,6 +72,32 @@ const Page: React.FC = props => {
       }}
     >
       Click dropByCacheKey
+    </div>
+  );
+};
+```
+
+### patchKeepAlive
+
+动态修改 keepalive 配置
+
+```ts
+// 假如 config 中配置 keepalive: []
+import { patchKeepAlive } from 'umi';
+const Page: React.FC = props => {
+  return (
+    <div
+      onClick={() => {
+        //
+        patchKeepAlive(config => {
+          // 这里可以获取到最新的 keepalive 配置
+          config.push('/list');
+          // 操作配置之后返回
+          return config;
+        });
+      }}
+    >
+      Click patchKeepAlive
     </div>
   );
 };
