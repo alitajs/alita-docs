@@ -26,7 +26,7 @@ npm i @alitajs/keep-alive
 
 ```js
 export default {
-  plugins: ['@alitajs/keepalive'],
+  plugins: ['@alitajs/keep-alive'],
   keepalive: ['/pathname'],
 };
 ```
