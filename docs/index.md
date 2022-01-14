@@ -1,9 +1,9 @@
 ---
-title: alita - 基于 Umi 的移动端开发方案
+title: alita - 基于 Umi 的大前端开发框架
 order: 10
 hero:
   title: alita
-  desc: 基于 Umi 的移动端开发方案
+  desc: 基于 Umi 的大前端开发框架
   actions:
     - text: 入门教程
       link: /learn/create-alita-app
