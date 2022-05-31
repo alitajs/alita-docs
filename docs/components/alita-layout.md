@@ -12,23 +12,9 @@ The generic h5 layout in umi uses antd-mobile.
 > umi@2 和 alita@1 请使用 1.x 版本
 > 2.x 版本只支持 umi@3 和 alita@2
 
-**在 `alita` 里使用可以参考[mobileLayout](/config/config#mobilelayout)**
+> **在 `alita` 里使用可以参考[mobileLayout](/config/config#mobilelayout)**
 
-## 一、单独使用
-
-```bash
-npm i @alitajs/alita-layout --save
-// or
-yarn add @alitajs/alita-layout
-```
-
-```jsx
-import BasicLayout from '@alitajs/alita-layout';
-
-render(<BasicLayout />, document.getElementById('root'));
-```
-
-## 二、在 alita 中使用
+## 使用
 
 ### 1、通用配置
 
@@ -105,7 +91,7 @@ const Page = ({ location }) => {
       navBar: {
         pageTitle: '自定义名称',
         title: '自定义名称',
-        onLeftClick: () => <div>自定义内内容</div>,
+        onLeftClick: () => <div>自定义内容</div>,
       },
     });
   }, [a]);
